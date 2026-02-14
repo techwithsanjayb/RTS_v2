@@ -190,6 +190,9 @@ Track Related
 Engine Related
 '''
 class Category(models.Model):
+    name = models.CharField(max_length=150)
+    code = models.CharField(max_length=50)
+    
     department = models.ForeignKey(
         Department,
         on_delete=models.PROTECT,
@@ -198,9 +201,8 @@ class Category(models.Model):
     coach = models.ForeignKey(
         Coach_Type,
         on_delete=models.PROTECT,
-        related_name="coach"
-        name = models.CharField(max_length=150)
-        code = models.CharField(max_length=50))
+        related_name="coach",
+        )
 
     description = models.TextField(blank=True)
     is_active = models.BooleanField(default=True)
