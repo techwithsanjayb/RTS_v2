@@ -22,6 +22,7 @@ def agent_dashboard(request):
 
 def user_dashboard(request):
     record(request,"user_dashboard view called")
+    record("user_dashboard view called")
     return render(request,'core/user_dashboard.html')
 
 ####-----####-----####-----####------####-----####-----####-----####

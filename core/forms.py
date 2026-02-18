@@ -5,12 +5,22 @@ class UserLoginForm(forms.Form):
         max_length=255,
         required=True,
         label="User name",
-        widget=forms.TextInput(attrs={'placeholder': 'Enter username'})
+        widget=forms.TextInput(
+            attrs={
+                'placeholder': 'Enter username',
+                'class':'form-control'
+                }
+            )
     )
 
     password = forms.CharField(
         max_length=20,
         required=True,
         label="Password",
-        widget=forms.PasswordInput()
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder': 'Enter Password',
+                'class':'form-control'
+                }
+        )
     )
