@@ -240,3 +240,13 @@
 [2026-02-18 17:56:28 --- 127.0.0.1] views.py [110] [GET] /user_logout --> user1 logged out successfully
 [2026-02-18 17:56:28 --- 127.0.0.1] views.py [37] [GET] /login_view --> login_view View Called
 [2026-02-18 17:56:28 --- 127.0.0.1] views.py [98] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-18 17:57:05 --- 127.0.0.1] views.py [37] [POST] /login_view --> login_view View Called
+[2026-02-18 17:57:05 --- 127.0.0.1] views.py [55] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-18 17:57:05 --- 127.0.0.1] views.py [61] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-02-18 17:57:06 --- 127.0.0.1] views.py [76] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-02-18 17:57:06 --- 127.0.0.1] views.py [79] [POST] /login_view --> Role is being checked for redirection
+[2026-02-18 17:57:06 --- N/A] utils.py [4] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-02-18 17:57:06 --- N/A] utils.py [15] [N/A] N/A --> Role is User
+[2026-02-18 17:57:06 --- 127.0.0.1] views.py [85] [POST] /login_view --> Received dashboard Role is -- core:user_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-02-18 17:57:06 --- 127.0.0.1] views.py [24] [GET] /user_dashboard --> user_dashboard view called
+[2026-02-18 17:57:06 --- N/A] views.py [25] [N/A] N/A --> user_dashboard view called
