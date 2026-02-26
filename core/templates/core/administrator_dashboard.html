@@ -26,6 +26,7 @@
           <img src="{% static 'core/assets/images/agents.png' %}" alt="profile">
         </a>
                 </div>
+
                
                 <div class="row">
                   <div class="col-md-3 mb-4 stretch-card transparent">
@@ -104,6 +105,27 @@
                   </div>
                 </div>
                 
+
+                <div class="row">
+                  {% for data in System_list_obj %}
+                  {{ data.name }}
+                  {% endfor %}
+                </div>
+                <div class="row">
+                     
+                      <div class="col-md-3 dropdown-menu-static-demo">
+                        <div class="dropdown">
+                          <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> System </button>
+                          <div class="dropdown-menu hide" aria-labelledby="dropdownMenuButton7">
+                            
+                             
+                             {% for data in System_list_obj %}
+                  <a class="dropdown-item" href="#">{{ data.name }}</a>
+                  {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                  
               
              

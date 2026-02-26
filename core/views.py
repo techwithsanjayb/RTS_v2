@@ -5,12 +5,13 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from .utils import *
+from .models import *
 #####################################################################
 
 
 def home(request):
     record(request,"home view called")
-    return render(request,'core/home.html')
+    return render(request,'core/home.html',{'name':"Sanjay"})
 
 ####-----####-----####-----####------####-----####-----####-----####
 
@@ -29,7 +30,11 @@ def user_dashboard(request):
 
 def administrator_dashboard(request):
     record(request,"administrator_dashboard view called")
-    return render(request,'core/administrator_dashboard.html')
+    System_list_obj = System.objects.filter(is_active=True).all()
+    context = {
+        'System_list_obj':System_list_obj
+    }
+    return render(request,'core/administrator_dashboard.html',context)
 
 ####-----####-----####-----####------####-----####-----####-----####
 
@@ -97,16 +102,60 @@ def login_view(request):
     
     record(request,"GET Method calling --- Blank Form has been rendered to user for filling")
     return render(request,"core/login_view.html",{'UserLoginForm_obj':UserLoginForm_obj})
-        
-            
-            
-    
+                    
+####-----####-----####-----####------####-----####-----####-----####
+   
     
 def user_logout(request):
     record(request, "user_logout View Called")
     username = request.user.username
     logout(request)
     request.session.flush()
-    record(request, f"{username} logged out successfully")
+    record(request, f"{username} logged out successfully . Session has been flushed ")
     messages.success(request,"Logged out successfully !")
     return redirect('core:login_view')  # Redirect to the login page after logging out
+
+####-----####-----####-----####------####-----####-----####-----####
+
+def list_system(request):
+    System_list_obj = System.objects.filter(is_active=True).all()
+    record(request,f"List of System is --{System_list_obj}")
+    return render(request,'core/administrator_dashboard.html',{'System_list_obj':System_list_obj})
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
+
+
+
+####-----####-----####-----####------####-----####-----####-----####
