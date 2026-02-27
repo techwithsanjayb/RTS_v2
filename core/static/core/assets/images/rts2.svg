@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="250" viewBox="0 0 900 250" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background -->
+  <rect width="900" height="250" fill="white"/>
+
+  <!-- Circle Emblem -->
+  <circle cx="125" cy="125" r="95" fill="#0B3D91"/>
+  <circle cx="125" cy="125" r="75" fill="white"/>
+  
+  <!-- Train Icon (Simple Front View) -->
+  <rect x="95" y="95" width="60" height="50" rx="10" fill="#0B3D91"/>
+  <circle cx="110" cy="150" r="8" fill="#333"/>
+  <circle cx="140" cy="150" r="8" fill="#333"/>
+  <rect x="110" y="105" width="30" height="15" fill="#FFA500"/>
+
+  <!-- Text -->
+  <text x="250" y="115" font-family="Arial, sans-serif" 
+        font-size="48" font-weight="bold" fill="#0B3D91">
+        INDIAN RAILWAY
+  </text>
+
+  <text x="250" y="170" font-family="Arial, sans-serif" 
+        font-size="40" font-weight="bold" fill="#FF6600">
+        TICKETING SYSTEM
+  </text>
+
+</svg>

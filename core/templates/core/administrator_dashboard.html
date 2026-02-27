@@ -1,0 +1,132 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block administrator_dashboard_%}
+{% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Non-field form errors -->
+    {% if UserLoginForm_obj.non_field_errors %}
+        <div class="error">
+            {{ UserLoginForm_obj.non_field_errors }}
+        </div>
+    {% endif %}
+ 
+                <div class="row">
+                  <div class="col-12 col-xl-8 mb-4 mb-xl-0">
+                    <h3 class="font-weight-bold">Administrator Dashboard</h3>
+                  </div>
+                  <a class="nav-link dropdown-toggle show" href="#" data-bs-toggle="dropdown" id="profileDropdown" aria-expanded="true">
+          <img src="{% static 'core/assets/images/agents.png' %}" alt="profile">
+        </a>
+                </div>
+
+               
+                <div class="row">
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-tale">
+                      <div class="card-body">
+                        <p class="mb-4">Today’s Bookings</p>
+                        <p class="fs-30 mb-2">4006</p>
+                        <p>10.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-dark-blue">
+                      <div class="card-body">
+                        <p class="mb-4">Total Bookings</p>
+                        <p class="fs-30 mb-2">61344</p>
+                        <p>22.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-tale">
+                      <div class="card-body">
+                        <p class="mb-4">Today’s Bookings</p>
+                        <p class="fs-30 mb-2">4006</p>
+                        <p>10.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-dark-blue">
+                      <div class="card-body">
+                        <p class="mb-4">Total Bookings</p>
+                        <p class="fs-30 mb-2">61344</p>
+                        <p>22.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-tale">
+                      <div class="card-body">
+                        <p class="mb-4">Today’s Bookings</p>
+                        <p class="fs-30 mb-2">4006</p>
+                        <p>10.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-dark-blue">
+                      <div class="card-body">
+                        <p class="mb-4">Total Bookings</p>
+                        <p class="fs-30 mb-2">61344</p>
+                        <p>22.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-tale">
+                      <div class="card-body">
+                        <p class="mb-4">Today’s Bookings</p>
+                        <p class="fs-30 mb-2">4006</p>
+                        <p>10.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-4 stretch-card transparent">
+                    <div class="card card-dark-blue">
+                      <div class="card-body">
+                        <p class="mb-4">Total Bookings</p>
+                        <p class="fs-30 mb-2">61344</p>
+                        <p>22.00% (30 days)</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+
+                <div class="row">
+                  {% for data in System_list_obj %}
+                  {{ data.name }}
+                  {% endfor %}
+                </div>
+                <div class="row">
+                     
+                      <div class="col-md-3 dropdown-menu-static-demo">
+                        <div class="dropdown">
+                          <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> System </button>
+                          <div class="dropdown-menu hide" aria-labelledby="dropdownMenuButton7">
+                            
+                             
+                             {% for data in System_list_obj %}
+                  <a class="dropdown-item" href="#">{{ data.name }}</a>
+                  {% endfor %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 
+              
+             
+{% endblock %}

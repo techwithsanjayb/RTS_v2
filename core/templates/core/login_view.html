@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Railway Ticket System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 -->
+    <link href="{% static 'core/assets/vendors/css/vendor.bundle.base.css' %}" rel="stylesheet">
+    <link href="{% static 'core/assets/css/style.css' %}" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0d6efd, #003366);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            padding: 40px 30px;
+            background: #ffffff;
+        }
+
+        .brand-logo img {
+            width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .login-title {
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #003366;
+        }
+
+        .form-control {
+            height: 45px;
+            border-radius: 8px;
+        }
+
+        .btn-login {
+            height: 45px;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .invalid-feedback {
+            font-size: 0.85rem;
+        }
+
+        .alert {
+            border-radius: 8px;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="login-card text-center">
+
+    <div class="brand-logo">
+        <img src="{% static 'core/assets/images/rts2.svg' %}" alt="Logo">
+    </div>
+
+    <h4 class="login-title">Railway Ticket System</h4>
+
+    <!-- Django Messages -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Non-field Errors -->
+{% if UserLoginForm_obj.non_field_errors %}
+    <div class="alert alert-danger alert-dismissible fade show">
+        {% for error in UserLoginForm_obj.non_field_errors %}
+            {{ error }}
+        {% endfor %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+{% endif %}
+
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+
+        <!-- Username -->
+        <div class="mb-3 text-start">
+            <label class="form-label">Username</label>
+            {{ UserLoginForm_obj.username }}
+            {% if UserLoginForm_obj.username.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ UserLoginForm_obj.username.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3 text-start">
+            <label class="form-label">Password</label>
+            {{ UserLoginForm_obj.password }}
+            {% if UserLoginForm_obj.password.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ UserLoginForm_obj.password.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="d-grid mt-3">
+            <button type="submit" class="btn btn-primary btn-login">
+                Login
+            </button>
+        </div>
+    </form>
+
+    <div class="footer-text">
+        © 2026 Railway Ticket System
+    </div>
+
+</div>
+
+<script src="{% static 'core/assets/vendors/js/vendor.bundle.base.js' %}"></script>
+
+</body>
+</html>
