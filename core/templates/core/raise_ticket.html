@@ -1,0 +1,116 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block raiseticket_content %}
+
+<div class="container mt-4">
+    <h3>Raise a New Ticket</h3>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" novalidate class="mt-4">
+        {% csrf_token %}
+        
+        <!-- Department -->
+        <div class="mb-3">
+            {{ form.department.label_tag }}
+            {{ form.department }}
+            {% if form.department.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.department.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Category -->
+        <div class="mb-3">
+            {{ form.category.label_tag }}
+            {{ form.category }}
+            {% if form.category.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.category.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Issue -->
+        <div class="mb-3">
+            {{ form.issue.label_tag }}
+            {{ form.issue }}
+            {% if form.issue.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.issue.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+        <!-- Issue Description -->
+        <div class="mb-3">
+            {{ form.user_description.label_tag }}
+            {{ form.user_description }}
+            {% if form.user_description.errors %}
+                <div class="invalid-feedback d-block">
+                    {{ form.user_description.errors.0 }}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Submit Ticket</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const departmentSelect = document.getElementById('id_department');
+        const categorySelect = document.getElementById('id_category');
+        const issueSelect = document.getElementById('id_issue');
+
+        departmentSelect.addEventListener('change', function() {
+            const deptId = this.value;
+            categorySelect.innerHTML = '<option value="">-- Select Category --</option>';
+            issueSelect.innerHTML = '<option value="">-- Select Issue --</option>';
+
+            if (deptId) {
+                fetch('{% url "core:get_categories" %}?department_id=' + deptId)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(category => {
+                            const option = document.createElement('option');
+                            option.value = category.id;
+                            option.textContent = category.name;
+                            categorySelect.appendChild(option);
+                        });
+                    });
+            }
+        });
+
+        categorySelect.addEventListener('change', function() {
+            const catId = this.value;
+            issueSelect.innerHTML = '<option value="">-- Select Issue --</option>';
+
+            if (catId) {
+                fetch('{% url "core:get_issues" %}?category_id=' + catId)
+                    .then(response => response.json())
+                    .then(data => {
+                        data.forEach(issue => {
+                            const option = document.createElement('option');
+                            option.value = issue.id;
+                            option.textContent = issue.name;
+                            issueSelect.appendChild(option);
+                        });
+                    });
+            }
+        });
+    });
+</script>
+
+{% endblock %}
