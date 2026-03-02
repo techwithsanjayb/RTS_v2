@@ -7,12 +7,12 @@ def redirect_based_on_role(user):
         record("Role is Portal Admin")
         return "core:administrator_dashboard"
 
-    elif user.groups.filter(name="Agents").exists():
-        record("Role is Agent")
-        return "core:agent_dashboard"
+    elif user.groups.filter(name="ResolverUnit").exists():
+        record("Role is Resolver")
+        return "core:resolver_dashboard"
 
-    elif user.groups.filter(name="User").exists():
-        record("Role is User")
-        return "core:user_dashboard"
+    elif user.groups.filter(name="RaiserUnit").exists():
+        record("Role is Raiser")
+        return "core:raiser_dashboard"
 
     return None

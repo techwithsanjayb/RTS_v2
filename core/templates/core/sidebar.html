@@ -84,12 +84,12 @@
 {% endif %}
 
 
-  {% if  is_agent  %}
+  {% if  is_resolver  %}
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link" href="#">
         <i class="icon-grid menu-icon"></i>
-        <span class="menu-title">Agent Dashboard</span>
+        <span class="menu-title">Resolver Dashboard</span>
       </a>
     </li>
     <li class="nav-item">
@@ -167,12 +167,18 @@
   </ul>
   {% endif %}
 
-    {% if is_user  %}
+    {% if is_raiser  %}
   <ul class="nav">
     <li class="nav-item">
       <a class="nav-link" href="#">
         <i class="icon-grid menu-icon"></i>
-        <span class="menu-title">User Dashboard</span>
+        <span class="menu-title">Raiser Dashboard</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'core:raise_ticket' %}">
+        <i class="icon-plus menu-icon"></i>
+        <span class="menu-title">Raise Ticket</span>
       </a>
     </li>
     <li class="nav-item">

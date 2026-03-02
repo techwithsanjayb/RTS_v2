@@ -1,6 +1,6 @@
 from django.shortcuts import render ,redirect
 from rts.logger import *
-from .forms import UserLoginForm
+from .forms import UserLoginForm, TicketCreateForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
@@ -15,26 +15,59 @@ def home(request):
 
 ####-----####-----####-----####------####-----####-----####-----####
 
-def agent_dashboard(request):
-    record(request,"agent_dashboard view called")
-    return render(request,'core/agent_dashboard.html')
+def resolver_dashboard(request):
+    record(request,"resolver_dashboard view called")
+    return render(request,'core/resolver_dashboard.html')
 
 ####-----####-----####-----####------####-----####-----####-----####
 
-def user_dashboard(request):
-    record(request,"user_dashboard view called")
-    record("user_dashboard view called")
-    return render(request,'core/user_dashboard.html')
+def raiser_dashboard(request):
+    record(request,"raiser_dashboard view called")
+    return render(request,'core/raiser_dashboard.html')
+
+####-----####-----####-----####------####-----####-----####-----####
+
+@login_required
+def raise_ticket(request):
+    record(request, "raise_ticket view called")
+    form = TicketCreateForm(request.POST or None)
+    if request.method == "POST":
+        record(request, "raise_ticket POST received")
+        if form.is_valid():
+            ticket = form.save(raised_by=request.user)
+            messages.success(request, "Ticket raised successfully")
+            return redirect("core:raiser_dashboard")
+        else:
+            messages.error(request, "Please correct the errors below")
+    return render(request, 'core/raise_ticket.html', {'form': form})
+
+####-----####-----####-----####------####-----####-----####-----####
+
+def get_categories(request):
+    """AJAX endpoint to get categories for selected department"""
+    from django.http import JsonResponse
+    dept_id = request.GET.get('department_id')
+    if dept_id:
+        categories = Category.objects.filter(department_id=dept_id).values('id', 'name')
+        return JsonResponse(list(categories), safe=False)
+    return JsonResponse([], safe=False)
+
+####-----####-----####-----####------####-----####-----####-----####
+
+def get_issues(request):
+    """AJAX endpoint to get issues for selected category"""
+    from django.http import JsonResponse
+    cat_id = request.GET.get('category_id')
+    if cat_id:
+        issues = List_of_Issue.objects.filter(Issue_category_id=cat_id).values('id', 'name')
+        return JsonResponse(list(issues), safe=False)
+    return JsonResponse([], safe=False)
 
 ####-----####-----####-----####------####-----####-----####-----####
 
 def administrator_dashboard(request):
     record(request,"administrator_dashboard view called")
-    System_list_obj = System.objects.filter(is_active=True).all()
-    context = {
-        'System_list_obj':System_list_obj
-    }
-    return render(request,'core/administrator_dashboard.html',context)
+    return render(request,'core/administrator_dashboard.html')
 
 ####-----####-----####-----####------####-----####-----####-----####
 
@@ -117,10 +150,6 @@ def user_logout(request):
 
 ####-----####-----####-----####------####-----####-----####-----####
 
-def list_system(request):
-    System_list_obj = System.objects.filter(is_active=True).all()
-    record(request,f"List of System is --{System_list_obj}")
-    return render(request,'core/administrator_dashboard.html',{'System_list_obj':System_list_obj})
 
 ####-----####-----####-----####------####-----####-----####-----####
 
