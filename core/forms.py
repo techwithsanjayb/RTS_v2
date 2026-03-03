@@ -1,5 +1,5 @@
 from django import forms
-from datetime import timezone
+from django.utils import timezone
 from core.models import Ticket, TicketStatus, Department, Category, coach_type as CoachType, List_of_Issue
 
 class UserLoginForm(forms.Form):
@@ -88,8 +88,9 @@ class TicketCreateForm(forms.ModelForm):
         ticket = super().save(commit=False)
         if raised_by:
             ticket.raised_by = raised_by
-        # ticket.reported_date = timezone.now()
-        ticket.status = TicketStatus.objects.filter(code='OPEN').first()
+        ticket.reported_date = timezone.now()
+        # Get OPEN status or first available status
+        ticket.status = TicketStatus.objects.filter(code='OPEN').first() or TicketStatus.objects.first()
         if commit:
             ticket.save()
         return ticket

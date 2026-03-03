@@ -108,28 +108,8 @@ AGENT
 class Officer_Role(models.Model):
     name = models.CharField(max_length=150)
     officer_department = models.ForeignKey(Department, on_delete=models.CASCADE)
-
-########################################################
-
-
-########################################################
-
-
-########################################################
-'''
-ASHWINI -- IAS
-DIVYA -- IPS
-SANJAY -- AGENT
-'''
-
-class UserProfile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    officer_role = models.ForeignKey(Officer_Role, on_delete=models.SET_NULL, null=True)
-    responsible_dept = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True)
-
     def __str__(self):
-        return self.user.username
-    
+        return self.name
 ########################################################
 
 '''
@@ -167,6 +147,33 @@ class List_of_Issue(models.Model):
 
     def __str__(self):
         return self.name
+########################################################
+
+
+########################################################
+'''
+ASHWINI -- JE Electrical
+DIVYA -- Senior Engineer
+SANJAY -- JE AC
+'''
+
+class Resolver(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='resolver_profile')
+    officer_role = models.ForeignKey(Officer_Role, on_delete=models.SET_NULL, null=True)
+    responsible_dept = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
+    issue = models.ForeignKey(List_of_Issue,on_delete=models.SET_NULL, null=True)
+    is_busy = models.BooleanField(default=False, help_text="Threshold 1: True if has active tickets")
+    last_assigned_at = models.DateTimeField(null=True, blank=True)
+    def __str__(self):
+        return self.user.username
+    
+########################################################
+class Raiser(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='raiser_profile')
+    def __str__(self):
+       return self.user.username
+
 
 ########################################################
 '''
@@ -210,9 +217,11 @@ class Ticket(models.Model):
     assigned_responsible_unit  = models.ForeignKey(
         Department,
         on_delete=models.PROTECT,
-        related_name="unit_tickets"
+        related_name="unit_tickets",
+        null=True,
+        blank=True
     )
-    issue_resolver_name = models.ForeignKey(UserProfile,on_delete=models.PROTECT)
+    issue_resolver_name = models.ForeignKey(Resolver, on_delete=models.PROTECT, null=True, blank=True, related_name='assigned_tickets')
     user_description = models.TextField()
     resolution_description = models.TextField(blank=True, null=True)
     status = models.ForeignKey(

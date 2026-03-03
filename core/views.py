@@ -31,14 +31,31 @@ def raiser_dashboard(request):
 def raise_ticket(request):
     record(request, "raise_ticket view called")
     form = TicketCreateForm(request.POST or None)
+
     if request.method == "POST":
-        record(request, "raise_ticket POST received")
         if form.is_valid():
-            ticket = form.save(raised_by=request.user)
-            messages.success(request, "Ticket raised successfully")
-            return redirect("core:raiser_dashboard")
+            ticket = form.save(commit=False)
+            ticket.raised_by = request.user
+            ticket.reported_date = timezone.now()
+            initial_status = TicketStatus.objects.filter(code='OPEN').first()
+            if initial_status:
+                ticket.status = initial_status
+            ticket.complaint_id = generate_complaint_id()
+            resolver = auto_assign_ticket(ticket)
+            print("###########",resolver)
+            if resolver:
+                # ticket.assigned_to = resolver # Assigning the resolver here
+                messages.success(request, f"Ticket #{ticket.complaint_id} assigned to {resolver.user.username}")
+            else:
+                messages.warning(request, f"Ticket #{ticket.complaint_id} raised. Pending assignment.")
+
+            ticket.save()
+
+            return redirect('core:raiser_dashboard')
+        
         else:
-            messages.error(request, "Please correct the errors below")
+            messages.error(request, "Please correct the errors in the form below.")
+
     return render(request, 'core/raise_ticket.html', {'form': form})
 
 ####-----####-----####-----####------####-----####-----####-----####

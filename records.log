@@ -303,3 +303,206 @@
 [2026-02-28 18:05:44 --- 127.0.0.1] views.py [35] [POST] /raise_ticket --> raise_ticket POST received
 [2026-02-28 18:08:19 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
 [2026-02-28 18:08:19 --- 127.0.0.1] views.py [35] [POST] /raise_ticket --> raise_ticket POST received
+[2026-02-28 21:12:02 --- 127.0.0.1] views.py [13] [GET] / --> home view called
+[2026-02-28 21:12:08 --- 127.0.0.1] views.py [143] [GET] /user_logout --> user_logout View Called
+[2026-02-28 21:12:08 --- 127.0.0.1] views.py [147] [GET] /user_logout --> admin logged out successfully . Session has been flushed 
+[2026-02-28 21:12:08 --- 127.0.0.1] views.py [75] [GET] /login_view --> login_view View Called
+[2026-02-28 21:12:08 --- 127.0.0.1] views.py [136] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 21:12:22 --- 127.0.0.1] views.py [75] [POST] /login_view --> login_view View Called
+[2026-02-28 21:12:22 --- 127.0.0.1] views.py [93] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-28 21:12:22 --- 127.0.0.1] views.py [99] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-02-28 21:12:23 --- 127.0.0.1] views.py [114] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-02-28 21:12:23 --- 127.0.0.1] views.py [117] [POST] /login_view --> Role is being checked for redirection
+[2026-02-28 21:12:23 --- N/A] utils.py [7] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-02-28 21:12:23 --- N/A] utils.py [14] [N/A] N/A --> Role is Resolver
+[2026-02-28 21:12:23 --- 127.0.0.1] views.py [123] [POST] /login_view --> Received dashboard Role is -- core:resolver_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-02-28 21:12:23 --- 127.0.0.1] views.py [19] [GET] /resolver_dashboard --> resolver_dashboard view called
+[2026-02-28 21:12:37 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:12:47 --- 127.0.0.1] views.py [143] [GET] /user_logout --> user_logout View Called
+[2026-02-28 21:12:47 --- 127.0.0.1] views.py [147] [GET] /user_logout --> resolver1 logged out successfully . Session has been flushed 
+[2026-02-28 21:12:47 --- 127.0.0.1] views.py [75] [GET] /login_view --> login_view View Called
+[2026-02-28 21:12:47 --- 127.0.0.1] views.py [136] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 21:12:51 --- 127.0.0.1] views.py [143] [GET] /user_logout --> user_logout View Called
+[2026-02-28 21:12:51 --- 127.0.0.1] views.py [147] [GET] /user_logout -->  logged out successfully . Session has been flushed 
+[2026-02-28 21:12:51 --- 127.0.0.1] views.py [75] [GET] /login_view --> login_view View Called
+[2026-02-28 21:12:51 --- 127.0.0.1] views.py [136] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 21:12:52 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 21:12:55 --- 127.0.0.1] views.py [13] [GET] / --> home view called
+[2026-02-28 21:13:03 --- 127.0.0.1] views.py [143] [GET] /user_logout --> user_logout View Called
+[2026-02-28 21:13:03 --- 127.0.0.1] views.py [147] [GET] /user_logout -->  logged out successfully . Session has been flushed 
+[2026-02-28 21:13:03 --- 127.0.0.1] views.py [75] [GET] /login_view --> login_view View Called
+[2026-02-28 21:13:03 --- 127.0.0.1] views.py [136] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 21:35:30 --- 127.0.0.1] views.py [13] [GET] / --> home view called
+[2026-02-28 21:35:34 --- 127.0.0.1] views.py [143] [GET] /user_logout --> user_logout View Called
+[2026-02-28 21:35:34 --- 127.0.0.1] views.py [147] [GET] /user_logout --> admin logged out successfully . Session has been flushed 
+[2026-02-28 21:35:34 --- 127.0.0.1] views.py [75] [GET] /login_view --> login_view View Called
+[2026-02-28 21:35:34 --- 127.0.0.1] views.py [136] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 21:35:51 --- 127.0.0.1] views.py [75] [POST] /login_view --> login_view View Called
+[2026-02-28 21:35:51 --- 127.0.0.1] views.py [93] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-28 21:35:51 --- 127.0.0.1] views.py [99] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-02-28 21:35:53 --- 127.0.0.1] views.py [114] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-02-28 21:35:53 --- 127.0.0.1] views.py [117] [POST] /login_view --> Role is being checked for redirection
+[2026-02-28 21:35:53 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-02-28 21:35:53 --- N/A] utils.py [19] [N/A] N/A --> Role is Raiser
+[2026-02-28 21:35:53 --- 127.0.0.1] views.py [123] [POST] /login_view --> Received dashboard Role is -- core:raiser_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-02-28 21:35:53 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 21:35:56 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:36:06 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:36:06 --- 127.0.0.1] views.py [35] [POST] /raise_ticket --> raise_ticket POST received
+[2026-02-28 21:40:09 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:40:09 --- 127.0.0.1] views.py [35] [POST] /raise_ticket --> raise_ticket POST received
+[2026-02-28 21:40:12 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:40:21 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:40:21 --- 127.0.0.1] views.py [35] [POST] /raise_ticket --> raise_ticket POST received
+[2026-02-28 21:42:46 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:42:56 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:42:56 --- 127.0.0.1] views.py [35] [POST] /raise_ticket --> raise_ticket POST received
+[2026-02-28 21:47:22 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:47:32 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 21:47:32 --- 127.0.0.1] views.py [35] [POST] /raise_ticket --> raise_ticket POST received
+[2026-02-28 21:47:32 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 21:47:49 --- 127.0.0.1] views.py [143] [GET] /user_logout --> user_logout View Called
+[2026-02-28 21:47:49 --- 127.0.0.1] views.py [147] [GET] /user_logout --> raiser1 logged out successfully . Session has been flushed 
+[2026-02-28 21:47:49 --- 127.0.0.1] views.py [75] [GET] /login_view --> login_view View Called
+[2026-02-28 21:47:49 --- 127.0.0.1] views.py [136] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 21:52:07 --- 127.0.0.1] views.py [75] [GET] /login_view --> login_view View Called
+[2026-02-28 21:52:07 --- 127.0.0.1] views.py [136] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 21:52:09 --- 127.0.0.1] views.py [75] [POST] /login_view --> login_view View Called
+[2026-02-28 21:52:09 --- 127.0.0.1] views.py [93] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-28 21:52:09 --- 127.0.0.1] views.py [132] [POST] /login_view --> Form Data is invalid. User should fill valid data
+[2026-02-28 21:52:14 --- 127.0.0.1] views.py [75] [POST] /login_view --> login_view View Called
+[2026-02-28 21:52:14 --- 127.0.0.1] views.py [93] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-28 21:52:14 --- 127.0.0.1] views.py [99] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-02-28 21:52:15 --- 127.0.0.1] views.py [114] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-02-28 21:52:15 --- 127.0.0.1] views.py [117] [POST] /login_view --> Role is being checked for redirection
+[2026-02-28 21:52:15 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-02-28 21:52:15 --- N/A] utils.py [11] [N/A] N/A --> Role is Portal Admin
+[2026-02-28 21:52:15 --- 127.0.0.1] views.py [123] [POST] /login_view --> Received dashboard Role is -- core:administrator_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-02-28 21:52:15 --- 127.0.0.1] views.py [69] [GET] /administrator_dashboard --> administrator_dashboard view called
+[2026-02-28 22:10:50 --- 127.0.0.1] views.py [85] [GET] /administrator_dashboard --> administrator_dashboard view called
+[2026-02-28 22:10:54 --- 127.0.0.1] views.py [159] [GET] /user_logout --> user_logout View Called
+[2026-02-28 22:10:54 --- 127.0.0.1] views.py [163] [GET] /user_logout --> administrator1 logged out successfully . Session has been flushed 
+[2026-02-28 22:10:54 --- 127.0.0.1] views.py [91] [GET] /login_view --> login_view View Called
+[2026-02-28 22:10:54 --- 127.0.0.1] views.py [152] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 22:11:08 --- 127.0.0.1] views.py [91] [POST] /login_view --> login_view View Called
+[2026-02-28 22:11:08 --- 127.0.0.1] views.py [109] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-28 22:11:08 --- 127.0.0.1] views.py [115] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-02-28 22:11:08 --- 127.0.0.1] views.py [130] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-02-28 22:11:08 --- 127.0.0.1] views.py [133] [POST] /login_view --> Role is being checked for redirection
+[2026-02-28 22:11:08 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-02-28 22:11:08 --- N/A] utils.py [19] [N/A] N/A --> Role is Raiser
+[2026-02-28 22:11:08 --- 127.0.0.1] views.py [139] [POST] /login_view --> Received dashboard Role is -- core:raiser_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-02-28 22:11:08 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 22:11:10 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:11:19 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:14:26 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:14:35 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:19:56 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:20:06 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:21:40 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:21:48 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:23:36 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:23:39 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:23:40 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:23:40 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:23:40 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:23:49 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:24:49 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:24:58 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:24:58 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 22:25:13 --- 127.0.0.1] views.py [159] [GET] /user_logout --> user_logout View Called
+[2026-02-28 22:25:13 --- 127.0.0.1] views.py [163] [GET] /user_logout --> raiser1 logged out successfully . Session has been flushed 
+[2026-02-28 22:25:13 --- 127.0.0.1] views.py [91] [GET] /login_view --> login_view View Called
+[2026-02-28 22:25:13 --- 127.0.0.1] views.py [152] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 22:25:24 --- 127.0.0.1] views.py [91] [GET] /login_view --> login_view View Called
+[2026-02-28 22:25:24 --- 127.0.0.1] views.py [152] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 22:41:28 --- 127.0.0.1] views.py [91] [GET] /login_view --> login_view View Called
+[2026-02-28 22:41:28 --- 127.0.0.1] views.py [152] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 22:41:32 --- 127.0.0.1] views.py [91] [POST] /login_view --> login_view View Called
+[2026-02-28 22:41:32 --- 127.0.0.1] views.py [109] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-28 22:41:32 --- 127.0.0.1] views.py [115] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-02-28 22:41:33 --- 127.0.0.1] views.py [130] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-02-28 22:41:33 --- 127.0.0.1] views.py [133] [POST] /login_view --> Role is being checked for redirection
+[2026-02-28 22:41:33 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-02-28 22:41:33 --- N/A] utils.py [19] [N/A] N/A --> Role is Raiser
+[2026-02-28 22:41:33 --- 127.0.0.1] views.py [139] [POST] /login_view --> Received dashboard Role is -- core:raiser_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-02-28 22:41:33 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 22:41:41 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 22:45:03 --- 127.0.0.1] views.py [159] [GET] /user_logout --> user_logout View Called
+[2026-02-28 22:45:03 --- 127.0.0.1] views.py [163] [GET] /user_logout --> raiser1 logged out successfully . Session has been flushed 
+[2026-02-28 22:45:03 --- 127.0.0.1] views.py [91] [GET] /login_view --> login_view View Called
+[2026-02-28 22:45:03 --- 127.0.0.1] views.py [152] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 22:45:31 --- 127.0.0.1] views.py [91] [GET] /login_view --> login_view View Called
+[2026-02-28 22:45:31 --- 127.0.0.1] views.py [152] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 23:27:56 --- 127.0.0.1] views.py [13] [GET] / --> home view called
+[2026-02-28 23:28:07 --- 127.0.0.1] views.py [159] [GET] /user_logout --> user_logout View Called
+[2026-02-28 23:28:07 --- 127.0.0.1] views.py [163] [GET] /user_logout --> raiser1 logged out successfully . Session has been flushed 
+[2026-02-28 23:28:07 --- 127.0.0.1] views.py [91] [GET] /login_view --> login_view View Called
+[2026-02-28 23:28:07 --- 127.0.0.1] views.py [152] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-02-28 23:28:28 --- 127.0.0.1] views.py [91] [POST] /login_view --> login_view View Called
+[2026-02-28 23:28:28 --- 127.0.0.1] views.py [109] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-02-28 23:28:28 --- 127.0.0.1] views.py [115] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-02-28 23:28:29 --- 127.0.0.1] views.py [130] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-02-28 23:28:29 --- 127.0.0.1] views.py [133] [POST] /login_view --> Role is being checked for redirection
+[2026-02-28 23:28:29 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-02-28 23:28:29 --- N/A] utils.py [19] [N/A] N/A --> Role is Raiser
+[2026-02-28 23:28:29 --- 127.0.0.1] views.py [139] [POST] /login_view --> Received dashboard Role is -- core:raiser_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-02-28 23:28:29 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 23:29:32 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:29:55 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:29:55 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 23:37:54 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:38:07 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:38:07 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 23:40:51 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 23:40:54 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:41:16 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:41:26 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:41:26 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 23:46:00 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-02-28 23:46:02 --- 127.0.0.1] views.py [32] [GET] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:46:11 --- 127.0.0.1] views.py [32] [POST] /raise_ticket --> raise_ticket view called
+[2026-02-28 23:46:12 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-03-01 00:00:53 --- 127.0.0.1] views.py [13] [GET] / --> home view called
+[2026-03-01 00:01:41 --- 127.0.0.1] views.py [92] [GET] / --> login_view View Called
+[2026-03-01 00:01:41 --- 127.0.0.1] views.py [95] [GET] / --> User already authenticated. Redirecting to check role.
+[2026-03-01 00:01:41 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-03-01 00:01:41 --- N/A] utils.py [19] [N/A] N/A --> Role is Raiser
+[2026-03-01 00:01:41 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-03-01 00:01:44 --- 127.0.0.1] views.py [25] [GET] /raiser_dashboard --> raiser_dashboard view called
+[2026-03-01 00:01:49 --- 127.0.0.1] views.py [160] [GET] /user_logout --> user_logout View Called
+[2026-03-01 00:01:49 --- 127.0.0.1] views.py [164] [GET] /user_logout --> raiser1 logged out successfully . Session has been flushed 
+[2026-03-01 00:01:49 --- 127.0.0.1] views.py [92] [GET] /login_view --> login_view View Called
+[2026-03-01 00:01:49 --- 127.0.0.1] views.py [153] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-03-01 00:01:50 --- 127.0.0.1] views.py [92] [GET] /login_view --> login_view View Called
+[2026-03-01 00:01:50 --- 127.0.0.1] views.py [153] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-03-01 00:01:57 --- 127.0.0.1] views.py [92] [GET] / --> login_view View Called
+[2026-03-01 00:01:57 --- 127.0.0.1] views.py [153] [GET] / --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-03-03 23:41:26 --- 127.0.0.1] views.py [92] [GET] / --> login_view View Called
+[2026-03-03 23:41:26 --- 127.0.0.1] views.py [95] [GET] / --> User already authenticated. Redirecting to check role.
+[2026-03-03 23:41:26 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-03-03 23:41:26 --- 127.0.0.1] views.py [102] [GET] / --> SECURITY WARNING: user authenticated but no role assigned
+[2026-03-03 23:41:26 --- 127.0.0.1] views.py [92] [GET] /login_view --> login_view View Called
+[2026-03-03 23:41:26 --- 127.0.0.1] views.py [153] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-03-03 23:41:30 --- 127.0.0.1] views.py [92] [POST] /login_view --> login_view View Called
+[2026-03-03 23:41:30 --- 127.0.0.1] views.py [110] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-03-03 23:41:30 --- 127.0.0.1] views.py [116] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-03-03 23:41:31 --- 127.0.0.1] views.py [131] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-03-03 23:41:31 --- 127.0.0.1] views.py [134] [POST] /login_view --> Role is being checked for redirection
+[2026-03-03 23:41:31 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-03-03 23:41:31 --- 127.0.0.1] views.py [145] [POST] /login_view --> Role not assigned. Contact Administrator
+[2026-03-03 23:41:31 --- 127.0.0.1] views.py [92] [GET] /login_view --> login_view View Called
+[2026-03-03 23:41:31 --- 127.0.0.1] views.py [153] [GET] /login_view --> GET Method calling --- Blank Form has been rendered to user for filling
+[2026-03-03 23:41:54 --- 127.0.0.1] views.py [92] [POST] /login_view --> login_view View Called
+[2026-03-03 23:41:54 --- 127.0.0.1] views.py [110] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-03-03 23:41:54 --- 127.0.0.1] views.py [116] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-03-03 23:41:56 --- 127.0.0.1] views.py [120] [POST] /login_view --> Authentication Failed. Invalid User Name or Password
+[2026-03-03 23:42:07 --- 127.0.0.1] views.py [92] [POST] /login_view --> login_view View Called
+[2026-03-03 23:42:07 --- 127.0.0.1] views.py [110] [POST] /login_view --> POST Method calling --- User has filled form and posted data
+[2026-03-03 23:42:07 --- 127.0.0.1] views.py [116] [POST] /login_view --> Form data is valid--Now sending request for authentication
+[2026-03-03 23:42:08 --- 127.0.0.1] views.py [131] [POST] /login_view --> Authentication Passed-- logged in successfully 
+[2026-03-03 23:42:08 --- 127.0.0.1] views.py [134] [POST] /login_view --> Role is being checked for redirection
+[2026-03-03 23:42:08 --- N/A] utils.py [8] [N/A] N/A --> Inside redirect_based_on_role function
+[2026-03-03 23:42:08 --- N/A] utils.py [11] [N/A] N/A --> Role is Portal Admin
+[2026-03-03 23:42:08 --- 127.0.0.1] views.py [140] [POST] /login_view --> Received dashboard Role is -- core:administrator_dashboard. Now Logged in User is being redirected to his Dashboard
+[2026-03-03 23:42:08 --- 127.0.0.1] views.py [86] [GET] /administrator_dashboard --> administrator_dashboard view called

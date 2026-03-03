@@ -5,6 +5,10 @@ admin.site.register(Department)
 admin.site.register(Category)
 admin.site.register(List_of_Issue)
 admin.site.register(EscalationLevel)
+admin.site.register(Ticket)
+admin.site.register(TicketStatus)
+admin.site.register(Resolver)
+admin.site.register(Officer_Role)
 #     # Category,
 #     # Coach_Type,
 #     # Department,
